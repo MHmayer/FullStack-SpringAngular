@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+<h1 align="center">Liste des etudiants</h1>
+<table align="center" border="1">
+
+<tr>
+	<th>ID</th>
+	<th>NOM</th>
+	<th>EMAIL</th>
+</tr>
+
+<tr th:each="etudiant : ${students}">
+	<td th:text="${etudiant.id}"></td>
+	<td th:text="${etudiant.nom}"></td>
+	<td th:text="${etudiant.email}"></td>
+</tr>
+   
+</table>
+</body>
+</html>
