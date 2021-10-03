@@ -5,28 +5,26 @@
 <link type="text/css" rel="stylesheet" th:href="@{/css/main.css}"/>
 </head>
 <body>
-	<h1 align="center">Ajouter nouvel étudiant</h1>
+	<h1 align="center">Modifier les prametres d'un etudiant</h1>
 
-	<form action="add" method="POST">
-	<div class="container">
+	<form action="../update" method="POST" th:object="${etudiant}">
+	<div class="container">	
 	
-      <div class="row">
-		 <div class="col-6" align="right"><label>ID</label></div>
-		 <div class="col-6"><input type="number" name="id" /></div>
-	  </div>
+		 <div class="col-6"><input type="hidden" name="id" th:field="*{id}" /></div>
+
 	  
 	  <div class="row"> 
 		<div class="col-6" align="right"><label>Nom</label></div>
-		<div class="col-6"><input type="text" name="nomEtudiant" /></div>
+		<div class="col-6"><input type="text" name="nomEtudiant" th:field="*{nom}" /></div>
 	  </div>
 	  
 	  <div class="row"> 
 		<div class="col-6" align="right"><label>Email</label></div>
-		<div class="col-6"><input type="text" name="email" /></div>
+		<div class="col-6"><input type="text" name="email" th:field="*{email}"/></div>
 	  </div>
 	<div class="row"> 
 	 <div class="col-6" align="right"></div>
-	 <div class="col-6"><input class="btn btn-success" type="submit" value="Ajouter"/></div>
+	 <div class="col-6"><input class="btn btn-success" type="submit" value="Modifier"/></div>
 	</div>
 	</div>
 	</form>
